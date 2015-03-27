@@ -25,21 +25,21 @@ app.use(function(req, res, next) {
 
 // catch all
 app.use( '*', function(req, res, next ){
-	console.log( '\n\n>>body: ', req.body );
+    console.log( '\n\n>>body: ', req.body );
 
-	if( req.method == 'OPTIONS')
-		return res.sendStatus(200);
+    if( req.method == 'OPTIONS')
+        return res.sendStatus(200);
 
-	// 模擬錯誤情況
-	// return res.status(404).send(req.body);
+    // 模擬錯誤情況
+    // return res.status(404).send(req.body);
 
-	// create 時幫物件建個 uid
-	if(!req.body.uid) {
-		req.body.uid = shortid.generate();
-	}
+    // create 時幫物件建個 uid
+    if(!req.body.uid) {
+        req.body.uid = shortid.generate();
+    }
 
-	// 模擬成功情況
-	return res.send(req.body);
+    // 模擬成功情況
+    return res.send(req.body);
 })
 
 // start the HTTP server

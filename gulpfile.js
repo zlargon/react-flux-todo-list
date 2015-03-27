@@ -95,7 +95,7 @@ gulp.task('clean', function(cb) {
 // 啟動 local API server
 // 並且會隨著 gulp dev 一起結束，不佔用 mem
 gulp.task('server', function() {
-	var spawn = require('child_process').spawn
+    var spawn = require('child_process').spawn
     var child = spawn('node', ['server.js']);
 });
 
